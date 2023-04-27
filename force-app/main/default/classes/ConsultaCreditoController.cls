@@ -14,10 +14,10 @@ public with sharing class ConsultaCreditoController {
         update lead;
         
         //Executa o post na CorleoneAPI para início da análise
-        CorleoneAPI.solicitarAnaliseDeRisco(lead.CPNJ__c);
+        //CorleoneAPI.solicitarAnaliseDeRisco(lead.CPNJ__c);
 
         //Agendamento do job que realiza a chamada para o método de retorno da consulta de crédito
-        String jobId = System.schedule('Consulta de Crédito para Lead: ' + lead.Nome, 
+        String jobId = System.schedule('Consulta de Crédito para Lead: ' + lead.Name, 
                                     '0 5 * * * ?', 
                                         new ConsultaCreditoScheduledJob(leadId));
         System.debug('Job ID: ' + jobId);
