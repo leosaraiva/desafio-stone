@@ -24,7 +24,7 @@ global class CorleoneAnalysisScheduler implements Schedulable {
         
         global void execute(SchedulableContext sc) {
             // Chamar o método getAnaliseDeRisco da classe CorleoneAPI com o requestId obtido do objeto atualizado
-            Boolean analysisResult = CorleoneAPI.getAnaliseDeRisco(requestId);
+            Boolean analysisResult = ConsultaCredito.getAnaliseDeRisco(requestId);
         }
     }
 }

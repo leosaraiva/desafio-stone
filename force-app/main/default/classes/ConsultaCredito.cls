@@ -1,4 +1,4 @@
-public class CorleoneAPI {
+public class ConsultaCredito {
     // Endpoint da API do serviço externo Corleone
     private static final String CORLEONE_API_ENDPOINT = 'https://api.corleone.com';
 
