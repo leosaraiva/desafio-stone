@@ -11,7 +11,7 @@ public class CorleoneAPI {
         
         // Realizar a chamada POST para a API do Corleone
         HttpRequest req = new HttpRequest();
-        req.setEndpoint(API_URL);
+        req.setEndpoint('API_URL');
         req.setMethod('POST');
         req.setHeader('Content-Type', 'application/json');
         req.setBody(requestBodyJSON);

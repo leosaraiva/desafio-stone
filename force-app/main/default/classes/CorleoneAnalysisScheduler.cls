@@ -10,7 +10,7 @@ global class CorleoneAnalysisScheduler implements Schedulable {
             
             // Agendar a chamada do método getAnaliseDeRisco da classe CorleoneAPI
             CorleoneAnalysisSchedulerWrapper wrapper = new CorleoneAnalysisSchedulerWrapper();
-            wrapper.requestId = objeto.RazaoSocial__c;
+            wrapper.requestId = objeto.CNPJ__c;
             String jobId = System.schedule('Get Corleone Analysis Result - ' + objeto.Id, 
                                             '0 ' + scheduledTime.minute() + ' ' + scheduledTime.hour() + ' ' + scheduledTime.day() + ' ' + scheduledTime.month() + ' ?', 
                                             wrapper);
@@ -24,7 +24,7 @@ global class CorleoneAnalysisScheduler implements Schedulable {
         
         global void execute(SchedulableContext sc) {
             // Chamar o método getAnaliseDeRisco da classe CorleoneAPI com o requestId obtido do objeto atualizado
-            String analysisResult = CorleoneAPI.getAnaliseDeRisco(requestId);
+            Boolean analysisResult = CorleoneAPI.getAnaliseDeRisco(requestId);
         }
     }
 }
