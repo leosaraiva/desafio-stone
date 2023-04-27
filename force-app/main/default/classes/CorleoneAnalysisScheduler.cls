@@ -11,7 +11,7 @@ global class CorleoneAnalysisScheduler implements Schedulable {
             // Agendar a chamada do método getAnaliseDeRisco da classe CorleoneAPI
             CorleoneAnalysisSchedulerWrapper wrapper = new CorleoneAnalysisSchedulerWrapper();
             wrapper.requestId = objeto.CNPJ__c;
-            String jobId = System.schedule('Get Corleone Analysis Result - ' + objeto.Id, 
+            String jobId = System.schedule('Resultado da Análise - ' + objeto.Id, 
                                             '0 ' + scheduledTime.minute() + ' ' + scheduledTime.hour() + ' ' + scheduledTime.day() + ' ' + scheduledTime.month() + ' ?', 
                                             wrapper);
             System.debug('Job ID: ' + jobId);
